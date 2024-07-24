@@ -1,0 +1,13 @@
+pip
+streamlit
+numpy
+xarray
+pandas
+odc-stac
+pystac-client
+matplotlib
+translate
+folium
+streamlit-folium
+planetary-computer
+scikit-image
