@@ -11,7 +11,7 @@ from utils.sentinel_analysis import (
     sentinel_2_query,
     sentinel_2_band_process,
     sentinel_1_query,
-    sentinel_1_band_process
+    sentinel_1_band_process,
 )
 from utils.wizard_decorators import next_step, previous_step, start_again
 
@@ -26,7 +26,7 @@ COLLECTIONS = [
 ]  # , "sentinel-2-l1c", "landsat-c2-l2"]
 
 ## Steps
-STEP_LIST = ["Select area", "Explote data", "Combine bands"]
+STEP_LIST = ["Select area", "Explore data", "Combine bands"]
 
 
 def set_tz(date: date):
