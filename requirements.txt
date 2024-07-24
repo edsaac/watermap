@@ -6,7 +6,6 @@ pandas
 odc-stac
 pystac-client
 matplotlib
-translate
 folium
 streamlit-folium
 planetary-computer
