@@ -1,0 +1,12 @@
+div[data-testid="stAppViewBlockContainer"] {
+    padding-top: 3.1rem;
+}
+
+button {
+    min-height: 0.5rem;
+    padding: 0.05rem 0.75rem;
+}
+
+div[data-testid="stMetricValue"] {
+    font-size: 1.2rem;
+}
