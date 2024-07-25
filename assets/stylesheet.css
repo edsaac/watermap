@@ -10,7 +10,3 @@ button {
 div[data-testid="stMetricValue"] {
     font-size: 1.2rem;
 }
-
-div.viewerBadge_link__qRIco {
-    display: none;
-}
