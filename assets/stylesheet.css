@@ -1,5 +1,5 @@
 div[data-testid="stAppViewBlockContainer"] {
-    padding-top: 3.1rem;
+    padding-top: 2.1rem;
 }
 
 button {
@@ -9,4 +9,8 @@ button {
 
 div[data-testid="stMetricValue"] {
     font-size: 1.2rem;
+}
+
+div[data-testid="stForm"] {
+    border: none;
 }

@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit.components.v1 import html
 from pystac_client import Client
 from dateutil import tz
 from datetime import date, datetime
@@ -43,9 +42,6 @@ def main():
 
     with open("assets/stylesheet.css", "r") as f:
         st.html(f"<style>{f.read()}</style>")
-
-    with open("assets/script.js", "r") as f:
-        html(f"<script>{f.read()}</script>", height=0)
 
     if "wizard_step" not in st.session_state:
         st.session_state.wizard_step = 0
