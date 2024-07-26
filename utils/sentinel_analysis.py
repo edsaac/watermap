@@ -107,6 +107,7 @@ def sentinel_2_query():
                 options=data.time.data,
                 format_func=lambda x: str(x).partition("T")[0],
             )
+            print(timestamp, type(timestamp))
 
         with image_placeholder:
             with st.spinner("Drawing images..."):
