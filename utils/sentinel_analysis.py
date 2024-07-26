@@ -3,7 +3,6 @@ import xarray as xr
 import streamlit as st
 import pandas as pd
 from odc.stac import stac_load
-from numpy import datetime_as_string
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from skimage.filters import threshold_minimum
@@ -105,9 +104,8 @@ def sentinel_2_query():
             timestamp = st.selectbox(
                 "Date Available",
                 options=data.time.data,
-                format_func=lambda x: str(x).partition("T")[0],
+                format_func=lambda x: x.strftime("%Y-%m-%d %X"),
             )
-            print(timestamp, type(timestamp))
 
         with image_placeholder:
             with st.spinner("Drawing images..."):
@@ -116,9 +114,7 @@ def sentinel_2_query():
                     ax=ax, cmap="Spectral_r", cbar_kwargs=dict(shrink=0.5)
                 )
                 ax.set_aspect("equal")
-                ax.set_title(
-                    datetime_as_string(timestamp, unit="m").replace("T", " | ")
-                )
+                ax.set_title(timestamp.strftime("%Y-%m-%d %X"))
                 ax.xaxis.label.set_visible(False)
                 ax.yaxis.label.set_visible(False)
                 ax.tick_params(labelsize=4)
@@ -302,7 +298,7 @@ def sentinel_1_query():
             timestamp = st.selectbox(
                 "Date Available",
                 options=data.time.data,
-                format_func=lambda x: str(x).partition("T")[0],
+                format_func=lambda x: x.strftime("%Y-%m-%d %X"),
             )
 
         with image_placeholder:
@@ -312,9 +308,7 @@ def sentinel_1_query():
                     ax=ax, cmap="Spectral_r", cbar_kwargs=dict(shrink=0.5)
                 )
                 ax.set_aspect("equal")
-                ax.set_title(
-                    datetime_as_string(timestamp, unit="m").replace("T", " | ")
-                )
+                ax.set_title(timestamp.strftime("%Y-%m-%d %X"))
                 ax.xaxis.label.set_visible(False)
                 ax.yaxis.label.set_visible(False)
                 ax.tick_params(labelsize=4)
