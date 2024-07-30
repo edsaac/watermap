@@ -14,3 +14,7 @@ div[data-testid="stMetricValue"] {
 div[data-testid="stForm"] {
     border: none;
 }
+
+header[data-testid="stHeader"] {
+    display: none;
+}
