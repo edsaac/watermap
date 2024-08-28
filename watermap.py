@@ -25,6 +25,14 @@ COLLECTIONS = [
     "sentinel-1-rtc",  # Radar
 ]  # , "sentinel-2-l1c", "landsat-c2-l2"]
 
+COLLECTIONS_HELP = """
+    **Sentinel-2** retrieves multispectral optical imagery
+    ▕▏[Learn more at the Sentinel Hub](https://docs.sentinel-hub.com/api/latest/data/sentinel-2-l1c/)
+    
+    **Sentinel-1** retrieves radar (SAR) data 
+    ▕▏[Learn more the Alaska Satellite Facility](https://hyp3-docs.asf.alaska.edu/guides/rtc_product_guide/)
+"""
+
 ## Steps
 STEP_LIST = ["Select area", "Explore data", "Combine bands"]
 
@@ -77,7 +85,7 @@ def main():
                 cloud_cover_placeholder = st.empty()
 
                 submit_button = st.form_submit_button(
-                    ":blue[**Retrieve data** ⭢]",
+                    ":blue[**Retrieve data** &nbsp; >>]",
                     use_container_width=True,
                 )
 
@@ -94,7 +102,7 @@ def main():
 
         with collection_placeholder:
             st.session_state.collection = st.selectbox(
-                "Collection", COLLECTIONS, index=0
+                "Collection", COLLECTIONS, index=0, help=COLLECTIONS_HELP
             )
 
         with cloud_cover_placeholder:
@@ -168,7 +176,7 @@ def main():
 
         with buttons_cols[1]:
             st.button(
-                ":blue[**Calculate bands** ⭢]",
+                ":blue[**Calculate bands** &nbsp; >>]",
                 use_container_width=True,
                 on_click=next_step,
                 disabled=not n_matches,
@@ -176,7 +184,7 @@ def main():
 
         with buttons_cols[0]:
             st.button(
-                ":gray[⭠ Go back]",
+                ":gray[<< &nbsp; Go back]",
                 use_container_width=True,
                 on_click=previous_step,
             )
@@ -195,14 +203,14 @@ def main():
 
         with buttons_cols[0]:
             st.button(
-                ":gray[⭠ Go back]",
+                ":gray[<< &nbsp; Go back]",
                 use_container_width=True,
                 on_click=previous_step,
             )
 
         with buttons_cols[1]:
             st.button(
-                ":blue[Start again ⭯]",
+                ":blue[Start again &nbsp; ^]",
                 use_container_width=True,
                 on_click=start_again,
             )
