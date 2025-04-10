@@ -1,4 +1,5 @@
 pip
+dask==2025.2.0
 streamlit
 numpy
 xarray
